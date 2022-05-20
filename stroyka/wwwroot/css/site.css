@@ -1,0 +1,31 @@
+html {
+  font-size: 14px;
+}
+
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+  margin-bottom: 60px;
+}
+
+#content {
+    margin-right: 130px; /* Отступ справа */
+    padding: 10px; /* Поля вокруг текста */
+    border-right: 1px dashed #183533; /* Линия справа */
+}
+
+#sidebar {
+    position: absolute; /* Абсолютное позиционирование */
+    right: 0; /* Положение от правого края */
+    top: 60px; /* Положение от верхнего края */
+    width: 120px; /* Ширина */
+}
