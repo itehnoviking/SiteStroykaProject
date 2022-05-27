@@ -6,11 +6,11 @@ namespace stroyka.Controllers
 {
     public class HomeController : Controller
     {
-        private readonly ILogger<HomeController> _logger;
+        private readonly StroykaContext _db;
 
-        public HomeController(ILogger<HomeController> logger)
+        public HomeController(StroykaContext db)
         {
-            _logger = logger;
+            _db = db;
         }
 
         public IActionResult Index()
@@ -57,6 +57,30 @@ namespace stroyka.Controllers
         {
             return View();
         }
+
+        [HttpGet]
+        public IActionResult Create()
+        {
+            var model = new Feedback();
+
+            return View(model);
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> Create(Feedback? model)
+        {
+            if (model == null)
+            {
+                return BadRequest();
+            }
+
+            await _db.Feedbacks.AddAsync(model);
+            await _db.SaveChangesAsync();
+
+            return RedirectToAction("Index", "Home");
+        }
+
+
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()

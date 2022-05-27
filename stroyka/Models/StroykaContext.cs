@@ -1,13 +1,15 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using stroyka.Entities;
 
-namespace stroyka
+namespace stroyka.Models
 {
+
     public class StroykaContext : DbContext
     {
-        public DbSet<ClientFeedback> ClientFeedbacks { get; set; }
         public StroykaContext(DbContextOptions<StroykaContext> options) : base(options)
         {
         }
+        public DbSet<Feedback> Feedbacks { get; set; }
+
     }
 }

@@ -5,15 +5,15 @@ using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
-using stroyka;
+using stroyka.Models;
 
 #nullable disable
 
-namespace stroyka.Data.Migrations
+namespace stroyka.Migrations
 {
-    [DbContext(typeof(StroykaContex))]
-    [Migration("20220520130639_CreateDB")]
-    partial class CreateDB
+    [DbContext(typeof(StroykaContext))]
+    [Migration("20220526112301_AddDb")]
+    partial class AddDb
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -24,7 +24,7 @@ namespace stroyka.Data.Migrations
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder, 1L, 1);
 
-            modelBuilder.Entity("stroyka.Entities.ClientFeedback", b =>
+            modelBuilder.Entity("stroyka.Models.Feedback", b =>
                 {
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
@@ -44,7 +44,7 @@ namespace stroyka.Data.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("ClientFeedbacks");
+                    b.ToTable("Feedbacks");
                 });
 #pragma warning restore 612, 618
         }
