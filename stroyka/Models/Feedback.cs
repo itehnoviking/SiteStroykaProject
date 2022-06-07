@@ -1,11 +1,10 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using stroyka.Entities;
+using System.ComponentModel.DataAnnotations;
 
 namespace stroyka.Models
 {
-    public class Feedback
+    public class Feedback : BaseEntity
     {
-        public Guid Id { get; set; }
-
         [Required(ErrorMessage = "Please enter name")]
         public string Name { get; set; }
 

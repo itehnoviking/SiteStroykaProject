@@ -1,6 +1,6 @@
-﻿@model FeedbacksListViewModel
+﻿@model FeedbackListItemViewModel
 
-@foreach(var p in Model.Feedbacks)
+@foreach (var p in Model.Feedbacks)
 {
     <partial name="FeedbackSummary" model="p" />
 }

@@ -1,6 +1,6 @@
 ﻿namespace stroyka.Models
 {
-    public class FeedbacksListViewModel
+    public class FeedbackListItemViewModel
     {
         public IEnumerable<Feedback> Feedbacks { get; set; }
     }
